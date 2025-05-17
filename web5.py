@@ -4,7 +4,7 @@ import numpy as np
 
 # Konfigurasi halaman
 st.set_page_config(
-    page_title="Dashboard Posyandu RW19",
+    page_title="Dashboard Posyandu Lansia RW19",
     page_icon="🌿",
     layout="wide"
 )
