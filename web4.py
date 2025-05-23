@@ -43,7 +43,7 @@ halaman = st.sidebar.selectbox(
 # ---------- Halaman Beranda ----------
 if halaman == "Beranda":
     st.markdown("""
-    <h1 style='text-align: center; color: #2E8B57;'>📊 Dashboard Kesehatan Posyandu RW18</h1>
+    <h1 style='text-align: center; color: #2E8B57;'>📊 Dashboard Hasil Posyandu Lansia RW18</h1>
     <p style='text-align: center; font-size:18px;'>Selamat datang! Aplikasi ini menyajikan data pemeriksaan kesehatan warga RW18 secara interaktif dan informatif.</p>
     <hr style='border:1px solid #2E8B57;'>
     """, unsafe_allow_html=True)
