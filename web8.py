@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
+import numpy as np
+
 
 # ========== CONFIG ========== #
 st.set_page_config(
@@ -109,21 +109,19 @@ elif page == "Visualisasi":
 
     # Grafik Tinggi Badan
     st.subheader("📏 Grafik Tinggi Badan Anak")
-    fig1, ax1 = plt.subplots(figsize=(12, 5))
-    sns.barplot(x=data_viz.index, y=data_viz["Tinggi (cm)"], color="#457b9d", ax=ax1)
-    ax1.set_xlabel("Anak ke-")
-    ax1.set_ylabel("Tinggi (cm)")
-    ax1.set_title(f"Tinggi Badan - Kategori: {kategori_pilihan}")
-    st.pyplot(fig1)
+    tinggi_chart = pd.DataFrame({
+        "Anak ke-": data_viz.index + 1,
+        "Tinggi (cm)": data_viz["Tinggi (cm)"].to_numpy()
+    })
+    st.bar_chart(tinggi_chart.set_index("Anak ke-"))
 
     # Grafik Berat Badan
     st.subheader("⚖️ Grafik Berat Badan Anak")
-    fig2, ax2 = plt.subplots(figsize=(12, 5))
-    sns.barplot(x=data_viz.index, y=data_viz["Berat (kg)"], color="#2a9d8f", ax=ax2)
-    ax2.set_xlabel("Anak ke-")
-    ax2.set_ylabel("Berat (kg)")
-    ax2.set_title(f"Berat Badan - Kategori: {kategori_pilihan}")
-    st.pyplot(fig2)
+    berat_chart = pd.DataFrame({
+        "Anak ke-": data_viz.index + 1,
+        "Berat (kg)": data_viz["Berat (kg)"].to_numpy()
+    })
+    st.bar_chart(berat_chart.set_index("Anak ke-"))
 
     # Tabel Data
     with st.expander("📋 Lihat Tabel Data"):
